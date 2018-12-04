@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>URL</title>
+</head>
+<body>
+    <div id="eventBtn"></div>
+    <div id="eventText"></div>
+    <div id="eventLink"></div>
+    <img id="eventImg" src="" alt="eventImg" style="display: none"/>
+    <!-- 별도 활용 내역은 제외함 -->
+<script>
+    var ETBtn = document.getElementById("eventBtn");
+    var ETText = document.getElementById("eventText");
+    var ETLink = document.getElementById("eventLink");
+    var ETImg = document.getElementById("eventImg");
+
+    var currentLocal = document.location.href;
+    var targetUrl = [];
+
+    for(var i = 72; i<90; i++){
+        targetUrl.push("http://URL/Path?QuerySting="+i+"&QuerySting")
+    }
+    if(targetUrl.indexOf(currentLocal) === -1){
+        ETBtn.style.display="none";	
+    }else{
+        ETBtn.style.display="block";
+        ETImg.src="FTP/img.png"
+        ETLink.href ="HomeLink1"
+    }
+
+    var targetUrl2 = [];
+    for(var i = 79; i<90; i++){
+        targetUrl2.push("http://URL2/Path?QuerySting="+i +"&QuerySting")
+    }
+    if(targetUrl2.indexOf(currentLocal) !== -1){
+        ETBtn.style.display="block";
+        ETImg.src="FTP/img2.jpg"
+        ETLink.href ="HomeLink2"
+    }
+</script>
+</body>
+</html>
